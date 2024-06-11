@@ -22,7 +22,7 @@ st.sidebar.markdown("**Stock_On_Hand**: The onion brown stock currently availabl
 
 # Streamlit interface
 st.title("Onion Mild Average Price Prediction")
-st.image("/Users/da-m1-09/Desktop/sales-hall-6259e56562ec0.jpg",width=600)
+st.image("sales-hall-6259e56562ec0.jpg",width=600)
 
 # Function to preprocess user inputs and make predictions
 def predict_price(Province,Container,Size_Grade,Weight_Kg,Low_Price,Total_Kg_Sold,High_Price,Sales_Total,Stock_On_Hand,month):
