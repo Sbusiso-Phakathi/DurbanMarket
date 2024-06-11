@@ -21,7 +21,7 @@ st.sidebar.markdown("**Stock_On_Hand**: The onion brown stock currently availabl
 
 
 # Streamlit interface
-st.title("Onion Mild Average Price Prediction xwwwww")
+st.title("Onion Mild Average Price Prediction")
 st.image("sales-hall-6259e56562ec0.jpg",width=600)
 
 # Function to preprocess user inputs and make predictions
