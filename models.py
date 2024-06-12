@@ -128,7 +128,7 @@ def predict_price_sifra(Province, Size_Grade, Weight_Kg, Low_Price, Sales_Total,
                         'OTHER AREAS': 3, 'TRANSVAAL': 5}
     size_grade_mapping = {'1R': 2, '1M': 1, '1Z': 5, '2L': 6, '2Z': 11, '3M': 13, '1S': 3, '3R': 14, '2M': 7, '1U': 4, '3Z': 17,
        '1L': 0, '2S': 9, '2R': 8, '4Z': 21, '3L': 12, '3U': 16, '4M': 19, '4L': 18, '3S': 15, '2U': 10, '4R': 20}
-    
+
     # Encode categorical inputs
     province_encoded = province_mapping.get(Province, -1)
     size_grade_encoded = size_grade_mapping.get(Size_Grade, -1)
@@ -144,7 +144,7 @@ def predict_price_sifra(Province, Size_Grade, Weight_Kg, Low_Price, Sales_Total,
 
 # Main function to run the app
 def main():
-    st.title('Commodity Average Price Prediction')
+    st.title('Commodity Average Price Per Kg Prediction')
 
     # Sidebar for selecting model
     selected_model = st.sidebar.selectbox("Select Commodity", ["Onion Brown", "Onion Mild", "Tomato Long Life", "Potato Washed Mondial", "Potato SIFRA (WASHED)"])
@@ -160,7 +160,7 @@ def main():
             Province_brown = st.selectbox('Province', ['NORTHERN CAPE', 'WESTERN CAPE - CERES', 'WEST COAST','SOUTH WESTERN FREE STATE', 'WESTERN FREESTATE', 'NATAL',
                                         'KWAZULU NATAL', 'OTHER AREAS', 'TRANSVAAL'])
             Size_Grade_brown = st.selectbox("Size Grade", ['1M', '2L', '1R', '1L', '1Z', '1S', '1X', '3L', '2R', '2M', '3S','3Z', '3M', '2Z', '3R', '2S'])
-            Weight_Kg_brown = st.number_input("Weight Per Kilograms", min_value=0.0)
+            Weight_Kg_brown = st.selectbox("Weight Per Kilograms", [1,2,3,5,7,10,20])
             Low_Price_brown = st.number_input("Low Price(R)", min_value=0)
         with col2:    
             Sales_Total_brown = st.number_input('Total Sales(R)', min_value=0)
@@ -182,12 +182,12 @@ def main():
             Province_mild = st.selectbox('Province', ['NORTH WEST', 'WESTERN CAPE - CERES', 'TRANSVAAL','OTHER AREAS', ''])
             Size_Grade_mild = st.selectbox("Size Grade", ['1M', '2L', '1R', '1L', '1Z', '1S', '1X', '3L', '2R', '2M', '3S','3Z', '3M', '2Z', '3R', '2S'])
             Container_mild = st.selectbox("Container", ["AA100","AC030","AF070","AG100","AL200"])
-            Weight_Kg_mild = st.number_input("Weight Per Kilogram", min_value=0.0)
+            Weight_Kg_mild = st.selectbox("Weight Per Kilogram", [1,2,3,7,10,20])
             Low_Price_mild = st.number_input("Low Price(R)", min_value=0)
         with col2:
             Total_Kg_Sold_mild = st.number_input('Total Kilograms Sold', min_value=0)
             High_Price_mild = st.number_input("High Price(R)", min_value=0)
-            Sales_Total_mild = st.number_input('Total SaleS(R)', min_value=0)
+            Sales_Total_mild = st.number_input('Total Sales(R)', min_value=0)
             Stock_On_Hand_mild = st.number_input('Stock On Hand', step=1)
             month_mild = st.slider("Month", 1, 12)
 
@@ -206,7 +206,7 @@ def main():
                                           'OTHER AREAS', 'TRANSVAAL', 'EASTERN FREESTATE', 'MPUMALANGA', 'NORTH EASTERN CAPE', 'NORTH WEST', 'SOUTHERN CAPE'])
             Size_Grade_potato = st.selectbox("Size Grade", ['1L', '1M', '1R', '1S', '1U', '1X', '1Z', '2L', '2M', '2S', '2U', '2X', '2Z',
                                               '3L', '3M', '3R', '3S', '3U', '3X', '3X', '3Z', '4L', '4M', '4R', '4S', '4U', '4Z'])
-            Weight_Kg_potato = st.number_input("Weight Per Kilogram", min_value=0.0)
+            Weight_Kg_potato = st.selectbox("Weight Per Kilogram", [7,10])
             Low_Price_potato = st.number_input("Low Price(R)", min_value=0)
         with col2:
             High_Price_potato = st.number_input("High Price(R)", min_value=0)
@@ -282,10 +282,10 @@ def main():
             Province_sifra = st.selectbox('Province', ['NORTHERN CAPE', 'WESTERN CAPE - CERES', 'WEST COAST','SOUTH WESTERN FREE STATE', 'WESTERN FREESTATE', 'NATAL',
                                           'KWAZULU NATAL', 'OTHER AREAS', 'TRANSVAAL'])
             Size_Grade_sifra = st.selectbox("Size Grade", ['1R', '1M', '1Z', '2L', '2Z', '3M', '1S', '3R', '2M', '1U', '3Z', '1L', '2S', '2R', '4Z', '3L', '3U', '4M', '4L', '3S', '2U', '4R'])
-            Weight_Kg_sifra = st.number_input("Weight Per Kilogram", min_value=0.0)
+            Weight_Kg_sifra = st.selectbox("Weight Per Kilogram", [2,4,7,10])
             Low_Price_sifra = st.number_input("Low Price(R)", min_value=0)
         with col2:
-            Sales_Total_sifra = st.number_input('Total Sales(r)', min_value=0)
+            Sales_Total_sifra = st.number_input('Total Sales(R)', min_value=0)
             Stock_On_Hand_sifra = st.number_input('Stock On Hand', step=1)
             month_sifra = st.slider("Month", 1, 12)
             day_sifra = st.slider("Day", 1, 31)
