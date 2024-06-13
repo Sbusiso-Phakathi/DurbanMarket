@@ -197,7 +197,6 @@ def main():
                         Low_Price_mild = 32.2
         with col2:
             Total_Kg_Sold_mild = st.number_input('Total Kilograms Sold', min_value=0)
-            High_Price_mild = st.number_input("High Price(R)", min_value=0)
             for i in range(len(onionbrowndata)) :
                 if onionbrowndata.Province[i] == Province_mild and onionbrowndata.Size_Grade[i] == Size_Grade_mild and onionbrowndata.Weight_Kg[i] == Weight_Kg_mild:
                     High_Price_mild = onionbrowndata['AVERAGE of Low_Price'][i]
