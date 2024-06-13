@@ -189,7 +189,6 @@ def main():
             Size_Grade_mild = st.selectbox("Size Grade", ['1M', '2L', '1R', '1L', '1Z', '1S', '1X', '3L', '2R', '2M', '3S','3Z', '3M', '2Z', '3R', '2S'])
             Container_mild = st.selectbox("Container", ["AA100","AC030","AF070","AG100","AL200"])
             Weight_Kg_mild = st.selectbox("Weight Per Kilogram", [1,2,3,7,10,20])
-            Low_Price_mild = st.number_input("Low Price(R)", min_value=0)
             for i in range(len(onionbrowndata)) :
                     if onionbrowndata.Province[i] == Province_mild and onionbrowndata.Size_Grade[i] == Size_Grade_mild and onionbrowndata.Weight_Kg[i] == Weight_Kg_mild:
                         Low_Price_mild = onionbrowndata['AVERAGE of Low_Price'][i]
