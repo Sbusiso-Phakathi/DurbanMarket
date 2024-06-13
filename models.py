@@ -222,6 +222,11 @@ def main():
                                               '3L', '3M', '3R', '3S', '3U', '3X', '3X', '3Z', '4L', '4M', '4R', '4S', '4U', '4Z'])
             Weight_Kg_potato = st.selectbox("Weight Per Kilogram", [7,10])
             Low_Price_potato = st.number_input("Low Price(R)", min_value=0)
+            for i in range(len(data)) :
+                    if data.Province[i] == Province_potato and data.Size_Grade[i] == Size_Grade_potato and data.Weight_Kg[i] == Weight_Kg_potato:
+                        Low_Price_potato = data['AVERAGE of Low_Price'][i]
+                    else: 
+                        Low_Price_potato = 32.2
         with col2:
             High_Price_potato = st.number_input("High Price(R)", min_value=0)
             Total_Kg_Sold_potato = st.number_input('Total Kilograms Sold(R)', min_value=0)
