@@ -305,7 +305,11 @@ def main():
                                           'KWAZULU NATAL', 'OTHER AREAS', 'TRANSVAAL'])
             Size_Grade_sifra = st.selectbox("Size Grade", ['1R', '1M', '1Z', '2L', '2Z', '3M', '1S', '3R', '2M', '1U', '3Z', '1L', '2S', '2R', '4Z', '3L', '3U', '4M', '4L', '3S', '2U', '4R'])
             Weight_Kg_sifra = st.selectbox("Weight Per Kilogram", [2,4,7,10])
-            Low_Price_sifra = st.number_input("Low Price(R)", min_value=0)
+            for i in range(len(data)) :
+                    if data.Province[i] == Province_sifra and data.Size_Grade[i] == Size_Grade_sifra and data.Weight_Kg[i] == Weight_Kg_sifra:
+                        Low_Price_sifra = data['AVERAGE of Low_Price'][i]
+                    else: 
+                        Low_Price_sifra = 32.2
         with col2:
             Sales_Total_sifra = st.number_input('Total Sales(R)', min_value=0)
             Stock_On_Hand_sifra = st.number_input('Stock On Hand', step=1)
