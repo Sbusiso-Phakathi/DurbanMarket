@@ -164,6 +164,9 @@ def main():
             for i in range(len(onionbrowndata)):
                 if onionbrowndata.Province[i] == Province_brown and onionbrowndata.Size_Grade[i] == Size_Grade_brown and onionbrowndata.Weight_Kg[i] == Weight_Kg_brown:
                     Low_Price_brown = onionbrowndata['AVERAGE of Low_Price'][i]
+                else: 
+                    Low_Price_brown = 32.2
+                
         with col2:    
             Sales_Total_brown = st.number_input('Total Sales(R)', min_value=0)
             Stock_On_Hand_brown = st.number_input('Stock On Hand', step=1)
