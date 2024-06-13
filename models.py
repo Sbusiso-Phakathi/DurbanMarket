@@ -3,7 +3,6 @@ import pickle
 import pandas as pd
 
 background_image_url = "https://t3.ftcdn.net/jpg/02/05/56/54/360_F_205565499_waqtbwXp6KukIa7ilco7GfIErIjIK117.jpg"
-onionbrowndata = pd.read_csv("onionbrownavg.csv")
 #Custom CSS
 background_css = f"""
 <style>
@@ -145,6 +144,7 @@ def predict_price_sifra(Province, Size_Grade, Weight_Kg, Low_Price, Sales_Total,
 # Main function to run the app
 def main():
     st.title('Commodity Average Price Per Kg Prediction')
+    onionbrowndata = pd.read_csv("onionbrownavg.csv")
 
     # Sidebar for selecting model
     selected_model = st.sidebar.selectbox("Select Commodity", ["Onion Brown", "Onion Mild", "Tomato Long Life", "Potato Washed Mondial", "Potato SIFRA (WASHED)"])
