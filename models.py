@@ -161,9 +161,13 @@ def main():
                                         'KWAZULU NATAL', 'OTHER AREAS', 'TRANSVAAL'])
             Size_Grade_brown = st.selectbox("Size Grade", ['1M', '2L', '1R', '1L', '1Z', '1S', '1X', '3L', '2R', '2M', '3S','3Z', '3M', '2Z', '3R', '2S'])
             Weight_Kg_brown = st.selectbox("Weight Per Kilograms", [1,2,3,5,7,10,20])
-            for i in range(len(onionbrowndata)):
+            state = 0
+            i = 0
+            while state != 1:
                 if onionbrowndata.Province[i] == Province_brown and onionbrowndata.Size_Grade[i] == Size_Grade_brown and onionbrowndata.Weight_Kg[i] == Weight_Kg_brown:
                     Low_Price_brown = onionbrowndata['AVERAGE of Low_Price'][i]
+                    state = 1
+                    i = i + 1
                 else: 
                     Low_Price_brown = 32.2
                 
