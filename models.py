@@ -163,7 +163,7 @@ def main():
             Weight_Kg_brown = st.selectbox("Weight Per Kilograms", [1,2,3,5,7,10,20])
             state = 0
             i = 0
-            catch:
+            try:
                 while state != 1:
                     if onionbrowndata.Province[i] == Province_brown and onionbrowndata.Size_Grade[i] == Size_Grade_brown and onionbrowndata.Weight_Kg[i] == Weight_Kg_brown:
                         Low_Price_brown = onionbrowndata['AVERAGE of Low_Price'][i]
