@@ -198,7 +198,7 @@ def main():
             Total_Kg_Sold_mild = st.number_input('Total Kilograms Sold', min_value=0)
             for i in range(len(data)) :
                 if data.Province[i] == Province_mild and data.Size_Grade[i] == Size_Grade_mild and data.Weight_Kg[i] == Weight_Kg_mild:
-                    High_Price_mild = data['AVERAGE of Low_Price'][i]
+                    High_Price_mild = data['AVERAGE of High_Price'][i]
                 else: 
                     High_Price_mild = 32.2
             Sales_Total_mild = st.number_input('Total Sales(R)', min_value=0)
@@ -221,14 +221,17 @@ def main():
             Size_Grade_potato = st.selectbox("Size Grade", ['1L', '1M', '1R', '1S', '1U', '1X', '1Z', '2L', '2M', '2S', '2U', '2X', '2Z',
                                               '3L', '3M', '3R', '3S', '3U', '3X', '3X', '3Z', '4L', '4M', '4R', '4S', '4U', '4Z'])
             Weight_Kg_potato = st.selectbox("Weight Per Kilogram", [7,10])
-            Low_Price_potato = st.number_input("Low Price(R)", min_value=0)
             for i in range(len(data)) :
                     if data.Province[i] == Province_potato and data.Size_Grade[i] == Size_Grade_potato and data.Weight_Kg[i] == Weight_Kg_potato:
                         Low_Price_potato = data['AVERAGE of Low_Price'][i]
                     else: 
                         Low_Price_potato = 32.2
         with col2:
-            High_Price_potato = st.number_input("High Price(R)", min_value=0)
+            for i in range(len(data)) :
+                    if data.Province[i] == Province_potato and data.Size_Grade[i] == Size_Grade_potato and data.Weight_Kg[i] == Weight_Kg_potato:
+                        High_Price_potato = data['AVERAGE of High_Price'][i]
+                    else: 
+                        High_Price_potato = 32.2
             Total_Kg_Sold_potato = st.number_input('Total Kilograms Sold(R)', min_value=0)
             Sales_Total_potato = st.number_input('Total Sales(R)', min_value=0)
             Stock_On_Hand_potato = st.number_input('Stock On Hand', step=1)
