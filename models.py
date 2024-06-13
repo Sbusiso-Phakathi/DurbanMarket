@@ -163,6 +163,8 @@ def main():
             Weight_Kg_brown = st.selectbox("Weight Per Kilograms", [1,2,3,5,7,10,20])
             if Province_brown == "WEST COAST" and Size_Grade_brown == "1M" and Weight_Kg_brown == 1:
                 Low_Price_brown = 7.535714286
+            elif Province_brown == "WESTERN CAPE - CERES" and Size_Grade_brown in("1M", "1R","1S","1Z") and Weight_Kg_brown == 1:
+                Low_Price_brown = 6,657142857
         with col2:    
             Sales_Total_brown = st.number_input('Total Sales(R)', min_value=0)
             Stock_On_Hand_brown = st.number_input('Stock On Hand', step=1)
